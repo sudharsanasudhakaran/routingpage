@@ -71,7 +71,7 @@
     <h4 class="m-0 font-weight-bold text-secondary">Enter the product details</h4>
   </div>
 
-      <form [formGroup]="myForm" (submit)="submit()">
+      <form [formGroup]="formpage" (submit)="submit()">
           <div class="form-group">
               <label for="name">Name: </label>  <input id="textInp" type="text" class="form-control"   formControlName="name" name="name" required>
           </div>
