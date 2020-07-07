@@ -1,0 +1,90 @@
+<!--
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    
+    <div id="form-half" style="margin-left: 2px;">
+    <p [innerHTML]="requirementMessage" style="color: red"></p>
+      <form  [formGroup]="userForm" (ngSubmit)="onSubmit(userForm)">
+        <div class="form-group">
+          <label for="name">Name: </label>  <input id="textInp" class="form-control" [ngClass]="{red:(!userForm.get('name').valid && userForm.get('name').dirty )}"  formControlName="name" name="name" placeholder="eg: Sudharsh" required>
+          <span class="ss" *ngIf="!userForm.get('name').valid && userForm.get('name').dirty"> &nbsp;&nbsp;<small>name should have 6-20 characters</small> </span>
+        </div>
+        <div class="form-group">
+          <label for="name">Price: </label>  <input id="textInp" class="form-control" [ngClass]="{red:(!userForm.get('price').valid && userForm.get('price').dirty )}"  formControlName="price" name="price" placeholder="eg: 20000" required>
+          <span class="ss" *ngIf="!userForm.get('price').valid && userForm.get('price').dirty"> &nbsp;&nbsp;<small>Enter valid price</small> </span>
+        </div>
+        <div class="form-group">
+          <label for="name">Stock: </label>  <input id="textInp" class="form-control" [ngClass]="{red:(!userForm.get('stonk').valid && userForm.get('stonk').dirty )}"  formControlName="stonk" name="stonk" placeholder="eg:300 points" required>
+          <span class="ss" *ngIf="!userForm.get('stonk').valid && userForm.get('stonk').dirty"> &nbsp;&nbsp;<small>Enter valid stock points</small> </span>
+        </div>
+        <br>
+        <div >
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+    
+    <div id="table-half">
+      <table class="table" style="background-color: #557A95;">
+       
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Stocks</th>
+          </tr>
+        </thead>
+  
+        <tbody>
+          <tr *ngFor="let user of userList; let i= index">
+            <td>{{user.name}}</td>
+            <td>{{user.price}}</td>
+            <td>{{user.stonk}}</td>
+            <td><button (click)="delete(i)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h4 class="m-0 font-weight-bold text-secondary">Enter the product details</h4>
+  </div>
+
+      <form [formGroup]="myForm" (submit)="submit()">
+          <div class="form-group">
+              <label for="name">Name: </label>  <input id="textInp" type="text" class="form-control"   formControlName="name" name="name" required>
+          </div>
+          <div class="form-group">
+              <label for="name">Price </label>  <input id="textInp" type="text" class="form-control"   formControlName="price" name="price" required>
+          </div>
+          <div class="form-group">
+              <label for="name">Stock: </label>  <input id="textInp" type="text" class="form-control"   formControlName="stock" name="stock" required>
+          </div>
+          <div >
+              <button class="btn btn-primary" type="submit">Send</button>
+          </div>
+      </form>
+</div>
+</body>
+</html>
